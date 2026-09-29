@@ -1,5 +1,6 @@
-# Rudamoon AI — Gmail Assistant PWA
+# RUDAMOON // AI — Cyberpunk Gmail PWA
 
-Polished PWA frontend for the published n8n Gmail conversational assistant.
+Ultra-dark cyberpunk frontend for the published n8n Gmail conversational assistant.
 
-Deployment: GitHub Pages, branch `main`, root `/`.
+Backend webhook remains unchanged.
+Deployment: GitHub Pages, `main`, `/` root.

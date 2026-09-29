@@ -1,12 +1,12 @@
 {
-  "name": "Rudamoon AI \u2014 Gmail Assistant",
+  "name": "Rudamoon AI \u2014 Gmail Intelligence",
   "short_name": "Rudamoon AI",
-  "description": "Personal conversational Gmail AI assistant",
+  "description": "Cyberpunk Gmail AI assistant",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#08111f",
-  "theme_color": "#08111f",
+  "background_color": "#05050a",
+  "theme_color": "#05050a",
   "orientation": "portrait",
   "icons": [
     {
