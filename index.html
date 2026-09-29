@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b1026">
+  <meta name="description" content="Rudamoon AI — personal Gmail assistant">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet">
+  <title>Rudamoon AI</title>
+  <style>
+    html, body { margin:0; width:100%; height:100%; overflow:hidden; background:#0b1026; }
+    #n8n-chat { width:100%; height:100%; }
+    :root {
+      --chat--color-primary: #10b981;
+      --chat--color-primary-shade-50: #059669;
+      --chat--color-primary-shade-100: #047857;
+      --chat--color-secondary: #0b1026;
+      --chat--color-dark: #0b1026;
+      --chat--window--width: 100vw;
+      --chat--window--height: 100vh;
+      --chat--header--background: #0b1026;
+      --chat--header--color: #ffffff;
+      --chat--message--font-size: 1rem;
+    }
+    .brand {
+      position: fixed;
+      top: env(safe-area-inset-top, 0);
+      left: 0; right: 0;
+      height: 52px;
+      z-index: 10;
+      display:flex; align-items:center;
+      padding:0 16px;
+      box-sizing:border-box;
+      color:#fff; background:#0b1026;
+      font:600 18px system-ui, sans-serif;
+      pointer-events:none;
+    }
+    .brand span { color:#10b981; margin-right:8px; }
+  </style>
+</head>
+<body>
+  <div class="brand"><span>✦</span> Rudamoon AI</div>
+  <div id="n8n-chat"></div>
+
+  <script type="module">
+    import { createChat } from "https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js";
+
+    createChat({
+      webhookUrl: "https://rudamoon.app.n8n.cloud/webhook/71c468d3-7373-40ee-8037-b7c149ce050e/chat",
+      target: "#n8n-chat",
+      mode: "fullscreen",
+      chatInputKey: "chatInput",
+      chatSessionKey: "sessionId",
+      loadPreviousSession: true,
+      showWelcomeScreen: false,
+      defaultLanguage: "en",
+      initialMessages: [
+        "Assalamualaikum! 👋",
+        "I'm Rudamoon AI, your Gmail assistant. Ask me about your emails."
+      ],
+      i18n: {
+        en: {
+          title: "Rudamoon AI 📧",
+          subtitle: "Your personal Gmail assistant",
+          footer: "",
+          getStarted: "New Conversation",
+          inputPlaceholder: "Ask about your Gmail..."
+        }
+      },
+      enableStreaming: true
+    });
+  </script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => navigator.serviceWorker.register("./service-worker.js"));
+}
+</script>
+</body>
+</html>
