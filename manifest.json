@@ -3,9 +3,10 @@
   "short_name": "Rudamoon AI",
   "description": "Personal conversational Gmail AI assistant",
   "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#0b1026",
-  "theme_color": "#0b1026",
+  "background_color": "#08111f",
+  "theme_color": "#08111f",
   "orientation": "portrait",
   "icons": [
     {
